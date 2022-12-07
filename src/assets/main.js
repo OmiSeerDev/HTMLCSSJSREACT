@@ -4,7 +4,7 @@ const content = null || document.getElementById('content');
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': '92ad8143f9msh1833e9c2c3f70dbp1d7e49jsn3bc675644ac2',
+		'X-RapidAPI-Key': '9,
 		'X-RapidAPI-Host': 'instagram28.p.rapidapi.com'
 	}
 };
