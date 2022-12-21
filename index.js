@@ -47,13 +47,13 @@ productList.push({
 productList.push({
     name: "Purse",
     price: 13,
-    image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+    image: 'https://cdn.cliqueinc.com/posts/292083/affordable-purse-brands-292083-1661443929747-main.700x0c.jpg'
 });
 
 productList.push({
     name: "Tablet",
     price: 1250,
-    image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX2v7EDhpcF5jF8cLoY7M39xQ745ABu-lIpg&usqp=CAU'
 });
 
 /*
@@ -76,31 +76,34 @@ for (product of productList) {
    
     const productCard = document.createElement('div');
     productCard.classList.add('product-card');
-
-    const productImage = document.createElement('img');
-    productImage.setAttribute('src', product.image);
-
+  
+    // product= {name, price, image} -> product.image
+    const productImg = document.createElement('img');
+    productImg.setAttribute('src', product.image);
+  
     const productInfo = document.createElement('div');
-    productCard.classList.add('product-info');
-
+    productInfo.classList.add('product-info');
+  
     const productInfoDiv = document.createElement('div');
-    
-    const productInfoPrice = document.createElement('p');
-    productInfoPrice.innerText = `$ ${product.price}`;
-    
-    const productInfoName = document.createElement('p');
-    productInfoName.innerText = `${product.name}`;
-
-    const productFigure = document.createElement('figure');
-    const productCart = document.createElement('img');
-    productCart.setAttribute('src', "./icons/bt_add_to_cart.svg")
-   
-    productFigure.appendChild(productCart);
+  
+    const productPrice = document.createElement('p');
+    productPrice.innerText = '$' + product.price;
+    const productName = document.createElement('p');
+    productName.innerText = product.name;
+  
+    productInfoDiv.appendChild(productPrice);
+    productInfoDiv.appendChild(productName);
+  
+    const productInfoFigure = document.createElement('figure');
+    const productImgCart = document.createElement('img');
+    productImgCart.setAttribute('src', './icons/bt_add_to_cart.svg');
+  
+    productInfoFigure.appendChild(productImgCart);
   
     productInfo.appendChild(productInfoDiv);
-    productInfo.appendChild(productFigure);
+    productInfo.appendChild(productInfoFigure);
   
-    productCard.appendChild(productImage);
+    productCard.appendChild(productImg);
     productCard.appendChild(productInfo);
   
     cardsContainer.appendChild(productCard);
