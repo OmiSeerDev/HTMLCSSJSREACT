@@ -4,7 +4,11 @@ const mobileMenu = document.querySelector('.mobile-menu');
 const burgerIcon = document.querySelector('.menu');
 const cartIcon = document.querySelector('.nav-shopping-cart');
 const orderAside = document.querySelector('.order-aside');
-const cardsContainer = document.querySelector('.cards-container')
+const cardsContainer = document.querySelector('.cards-container');
+const productDetails = document.querySelector('.product-details');
+const exitButton = document.querySelector('.product-details-close');
+
+
 toggleDesktopMenu = () => {
 desktopMenu.classList.toggle('inactive');
 const isAsideClosed = orderAside.classList.contains('inactive');
@@ -31,6 +35,14 @@ toggleOrderAside = () => {
     if(!isMobileMenuClosed) {
         mobileMenu.classList.add('inactive');
     }
+}
+
+openProductDetails =()=> {
+    
+    productDetails.classList.remove('inactive');
+}
+closeProductDetail =()=>{
+    productDetails.classList.add('inactive');
 }
 
 menuEmail.addEventListener('click',toggleDesktopMenu);
@@ -61,6 +73,7 @@ function renderProducts(arr) {
     for (product of arr) {
       const productCard = document.createElement('div');
       productCard.classList.add('product-card');
+
     
       // product= {name, price, image} -> product.image
       const productImg = document.createElement('img');
@@ -82,15 +95,20 @@ function renderProducts(arr) {
       const productInfoFigure = document.createElement('figure');
       const productImgCart = document.createElement('img');
       productImgCart.setAttribute('src', './icons/bt_add_to_cart.svg');
+      productImgCart.addEventListener('click', openProductDetails);
+      exitButton.addEventListener('click',closeProductDetail);
     
+      
       productInfoFigure.appendChild(productImgCart);
+      
+      
     
       productInfo.appendChild(productInfoDiv);
       productInfo.appendChild(productInfoFigure);
     
       productCard.appendChild(productImg);
       productCard.appendChild(productInfo);
-    
+      
       cardsContainer.appendChild(productCard);
     }
   }

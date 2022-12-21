@@ -291,16 +291,16 @@ align-items: center;
 }
 
 /* product detail*/
-.product-details{
+.product-details {
     width: 256px;
     height: 468px;
-    padding: 24px;
-    
-    flex-direction: column;
+    padding: 12px;
+    position: fixed;
     background-color: var(--text-input-field);
     border: 1px solid var(--very-light-pink);
     border-radius: 24px;
-    margin: 10px;
+    margin: auto;
+    justify-content: center;
 }
 
 .product-details div img{
@@ -310,7 +310,7 @@ align-items: center;
     height: 28px;
     position: absolute;
     margin: 8px;
-    padding: 1.5px;
+    padding: 4px;
     align-content: center;
     justify-content: center;
     z-index: 3;
@@ -382,9 +382,13 @@ justify-content: center;
     .desktop-menu{
         display: none;
     }
-    .product-detail {
-        width: 100%;
-        padding: 2px;
+    .product-details {
+        width: 90%;
+    }
+    .product-details button {
+        width: 95%;
+        margin: 4px;
+        padding: 4px;
     }
     .cards-container {
         grid-template-columns: repeat(auto-fill, 140px);
