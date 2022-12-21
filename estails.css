@@ -251,6 +251,7 @@ align-items: center;
   width: 240px;
   height: 240px;
   border-radius: 20px;
+  border: dashed 1px var(--very-light-pink);
   object-fit: cover;
 }
 .product-info {
@@ -258,13 +259,15 @@ align-items: center;
   justify-content: space-between;
   align-items: center;
   margin-top: 12px;
+  width: 240px;
 }
 .product-info figure {
-  margin: 0;
+  margin: 10px;
 }
 .product-info figure img {
   width: 35px;
   height: 35px;
+  justify-self: flex-end;
 }
 .product-info div p:nth-child(1) {
   font-weight: bold;
